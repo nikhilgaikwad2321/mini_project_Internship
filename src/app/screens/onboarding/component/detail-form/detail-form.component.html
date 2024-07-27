@@ -1,0 +1,47 @@
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <form [formGroup]="restaurantDetails" (ngSubmit)="handleSubmit()" class="p-12 bg-white shadow-md rounded-lg w-full max-w-lg">
+        <div>
+            <h1 class="text-2xl text-center mb-6 text-red-500">Add a Restaurant</h1>
+        </div>
+        <div class="mb-6">
+            <p class="text-xl py-2 text-gray-700">Restaurant Information</p>
+            <p class="text-gray-500">Provide necessary information of your Restaurant</p>
+        </div>
+        <hr class="mb-6">
+        <div class="mb-4">
+            <label for="restaurant-name" class="block text-gray-700">Restaurant Name:</label>
+            <input formControlName="name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" placeholder="Restaurant Name" id="restaurant-name" type="text">
+        </div>
+        <div class="mb-4">
+            <label for="owner" class="block text-gray-700">Owner Name:</label>
+            <input formControlName="owner" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" placeholder="Owner Name" id="owner" type="text">
+        </div>
+        <div class="mb-4">
+            <label for="street" class="block text-gray-700">Street Name:</label>
+            <input formControlName="street" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" placeholder="Street Name" id="street" type="text">
+        </div>
+        <div class="mb-4">
+            <label for="city" class="block text-gray-700">City:</label>
+            <input formControlName="city" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" placeholder="City" id="city" type="text">
+        </div>
+        <div class="mb-4">
+            <label for="zipcode" class="block text-gray-700">Zipcode:</label>
+            <input formControlName="zipcode" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" placeholder="Zipcode" id="zipcode" type="text">
+        </div>
+        <div class="mb-4">
+            <label for="type" class="block text-gray-700">Restaurant Type:</label>
+            <input formControlName="type" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" placeholder="Restaurant Type" id="type" type="text">
+        </div>
+        <div class="mb-4">
+            <label for="phone" class="block text-gray-700">Phone Number:</label>
+            <input formControlName="phone" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" placeholder="Phone Number" id="phone" type="number">
+        </div>
+        <div class="mb-4">
+            <label for="email" class="block text-gray-700">Email:</label>
+            <input formControlName="email" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" placeholder="Email" id="email" type="email">
+        </div>
+        <div class="flex justify-center mt-6">
+            <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded-full hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">Submit</button>
+        </div>
+    </form>
+</body>
