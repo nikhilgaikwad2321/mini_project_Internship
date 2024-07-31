@@ -1,0 +1,16 @@
+<div *ngIf="restaurants.length > 0">
+    <h2>Restaurants</h2>
+    <ul>
+      <li *ngFor="let restaurant of restaurants">
+        <h3>{{ restaurant.name }}</h3>
+        <p>Owner: {{ restaurant.owner }}</p>
+        <p>Address: {{ restaurant.street }}, {{ restaurant.city }}, {{ restaurant.zipcode }}</p>
+        <p>Phone: {{ restaurant.contact }}</p>
+        <p>Type: {{ restaurant.type }}</p>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="restaurants.length === 0">
+    <p>No restaurants available.</p>
+  </div>
+  
