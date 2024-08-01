@@ -18,5 +18,14 @@ export class ShowRestaurantComponent implements OnInit {
 }
 loadRestaurants(): void {
   this.backend.getAllRestaurants()
+  .subscribe({
+    next :(response) =>{
+      console.log("all restaurants",response);
+    },
+    error :(error) =>{
+      console.error('error ocurred',error);
+    }
+  });
+
 }
 }

@@ -8,12 +8,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BackendService {
-  private apiUrl = 'https://your-api-url.com/restaurants'; 
+  private apiUrl = 'https://dummyjson.com/users/1'; 
 
   constructor(private http: HttpClient) { }
 
   onboardRestaurant(restaurantAddRequest: RestaurantAddRequest){
-    this.http.post("/onboarding/show-restaurants", restaurantAddRequest, {responseType:'text'})
+    this.http.post("URL", restaurantAddRequest, {responseType:'text'})
     .subscribe({
       next: (response)=>{
         console.log('response got from backend is : ', response)
@@ -25,8 +25,10 @@ export class BackendService {
       }
     });
   }
+
   getAllRestaurants(): Observable<RestaurantShowRequest[]> {
     return this.http.get<RestaurantShowRequest[]>(this.apiUrl);
+
   }
 
   }
