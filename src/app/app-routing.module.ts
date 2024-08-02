@@ -6,7 +6,7 @@ import { ShowRestaurantComponent } from './screens/onboarding/component/show-res
 
 
 const routes: Routes = [
-  { path:'home', 
+  { path:'', 
     component: HomeComponent
   },
   { path:'onboarding/details-form', 

@@ -1,8 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RestaurantAddRequest } from '../models/RestaurantAddRequest';
-import { RestaurantShowRequest } from '../models/restaurant-show-request.model';
-import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -26,9 +25,17 @@ export class BackendService {
     });
   }
 
-  getAllRestaurants(): Observable<RestaurantShowRequest[]> {
-    return this.http.get<RestaurantShowRequest[]>(this.apiUrl);
+  getAllRestaurants() {
+    this.http.get('https://2866-2401-4900-1c44-8479-4d1e-678a-eb44-1d62.ngrok-free.app/restro/getRestroDetails',{responseType: 'json',headers:new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+     })})
 
+     .subscribe({
+      next:(response)=> console.log(response),
+      error: (err)=>{
+        console.log(err)
+      }
+    });
   }
 
   }

@@ -16,16 +16,9 @@ export class ShowRestaurantComponent implements OnInit {
   ngOnInit(): void {
     this.loadRestaurants();
 }
+
 loadRestaurants(): void {
   this.backend.getAllRestaurants()
-  .subscribe({
-    next :(response) =>{
-      console.log("all restaurants",response);
-    },
-    error :(error) =>{
-      console.error('error ocurred',error);
-    }
-  });
-
 }
+
 }
