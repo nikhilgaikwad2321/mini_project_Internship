@@ -1,21 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DetailFormComponent } from './screens/onboarding/component/detail-form/detail-form.component';
 import { HomeComponent } from './components/home/home.component';
-import { ShowRestaurantComponent } from './screens/onboarding/component/show-restaurant/show-restaurant.component';
-
 
 const routes: Routes = [
   { path:'', 
     component: HomeComponent
   },
-  { path:'onboarding/details-form', 
-    component:DetailFormComponent
-  },
-  {
-    path:'onboarding/show-restaurants',
-    component:ShowRestaurantComponent
-  }
+  { path: 'onboarding', loadChildren: () => import('./screens/onboarding/onboarding.module').then(m => m.OnboardingModule) }
 ];
 
 @NgModule({

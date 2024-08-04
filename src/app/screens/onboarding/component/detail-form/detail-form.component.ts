@@ -20,7 +20,7 @@ export class DetailFormComponent {
       city: ['', Validators.required],
       zipcode: ['', [Validators.required,]],
       phone: ['', [Validators.required,]],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required,]],
       type: ['', Validators.required]
     });
   }
@@ -44,6 +44,7 @@ export class DetailFormComponent {
     this.restaurantAddRequest.zipcode = details.value['zipcode'];
     this.restaurantAddRequest.type = details.value['type'];
     this.restaurantAddRequest.contact = details.value['phone'];
+    this.restaurantAddRequest.email=details.value['email'];
     this.processRequest(this.restaurantAddRequest);
 
   }

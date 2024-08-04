@@ -6,4 +6,5 @@ export class RestaurantAddRequest{
     type : string = ''
     contact: number = 0
     street : string = ''
+    email:string=''
 }

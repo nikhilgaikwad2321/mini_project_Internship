@@ -1,18 +1,20 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RestaurantAddRequest } from '../models/RestaurantAddRequest';
+import { Observable } from 'rxjs';
+import { RestaurantResponse } from '../models/RestaurantResponse';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class BackendService {
-  private apiUrl = 'https://dummyjson.com/users/1'; 
+  restaurants : any
 
   constructor(private http: HttpClient) { }
 
   onboardRestaurant(restaurantAddRequest: RestaurantAddRequest){
-    this.http.post("URL", restaurantAddRequest, {responseType:'text'})
+    this.http.post('https://cab5-2401-4900-1c7e-3765-1373-113f-809b-db7d.ngrok-free.app/restro/create', restaurantAddRequest, {responseType:'text'})
     .subscribe({
       next: (response)=>{
         console.log('response got from backend is : ', response)
@@ -24,18 +26,14 @@ export class BackendService {
       }
     });
   }
-
-  getAllRestaurants() {
-    this.http.get('https://2866-2401-4900-1c44-8479-4d1e-678a-eb44-1d62.ngrok-free.app/restro/getRestroDetails',{responseType: 'json',headers:new HttpHeaders({
-      "ngrok-skip-browser-warning": "true"
-     })})
-
-     .subscribe({
-      next:(response)=> console.log(response),
-      error: (err)=>{
-        console.log(err)
-      }
+  
+ 
+  getAllRestaurants(): Observable<RestaurantResponse[]> {
+    return this.http.get<RestaurantResponse[]>('https://cab5-2401-4900-1c7e-3765-1373-113f-809b-db7d.ngrok-free.app/restro/getAll', {
+      responseType: 'json',
+      headers: new HttpHeaders({
+        'ngrok-skip-browser-warning': 'true',
+      }),
     });
   }
-
-  }
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RestaurantShowRequest } from 'src/app/models/restaurant-show-request.model';
+import { RestaurantResponse } from 'src/app/models/RestaurantResponse';
+
 import { BackendService } from 'src/app/services/backend-service.service';
 
 
@@ -9,7 +10,7 @@ import { BackendService } from 'src/app/services/backend-service.service';
   styleUrls: ['./show-restaurant.component.scss']
 })
 export class ShowRestaurantComponent implements OnInit {
-  restaurants: RestaurantShowRequest[] = [];
+  restaurants: RestaurantResponse[] = [];
 
   constructor(private backend: BackendService) { }
 
@@ -18,7 +19,14 @@ export class ShowRestaurantComponent implements OnInit {
 }
 
 loadRestaurants(): void {
-  this.backend.getAllRestaurants()
-}
-
+  this.backend.getAllRestaurants().subscribe({
+    next: (response: RestaurantResponse[]) => {
+      this.restaurants = response;
+      console.log(this.restaurants);
+    },
+    error: (err: any) => {
+      console.error(err);
+    }
+    });
+  }
 }
