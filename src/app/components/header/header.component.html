@@ -1,16 +1,17 @@
 <header class="bg-red-500 p-6">
-    <div class="container mx-auto flex  items-center">
-        <div class="text-white text-2xl font-bold text-left">
-            EatsExpress
-        </div>
-        <nav class="flex-grow">
-            <ul class="flex justify-end space-x-4">
-                <li><a href="" class="text-white hover:text-red-200">Home</a></li>
-                <li><a href="onboarding/showRestaurant" class="text-white hover:text-red-200">Restaurants</a></li>
-                <li><a href="onboarding/detailform" class="text-white hover:text-red-200">Add a restaurant</a></li>
-                <li><a href="/login" class="text-white hover:text-red-200">Login</a></li>
-                <li><a href="/signup" class="text-white hover:text-red-200">Sign Up</a></li>
-            </ul>
-        </nav>
+    <div class="container mx-auto flex items-center">
+      <div class="flex items-center text-white text-2xl font-bold text-left">
+        <img src="assets/logo.png" alt="EatsExpress Logo" class="h-12 w-12 mr-2">
+        EatsExpress
+      </div>
+      <nav class="flex-grow">
+        <ul class="flex justify-end space-x-6">
+          <li><a routerLink="/" class="text-white hover:text-red-200">Home</a></li>
+          <li><a routerLink="/onboarding/showRestaurant" class="text-white hover:text-red-200">Restaurants</a></li>
+          <li><a routerLink="/onboarding/detailform" class="text-white hover:text-red-200">Add a restaurant</a></li>
+          <li><a routerLink="/login" class="text-white hover:text-red-200">Login</a></li>
+          <li><a routerLink="/signup" class="text-white hover:text-red-200">Sign Up</a></li>
+        </ul>
+      </nav>
     </div>
 </header>
